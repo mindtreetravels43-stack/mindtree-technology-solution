@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Django
+db.sqlite3
+staticfiles/
+
+# Secrets and environment variables
+.env
+.env.*
+*.env
+
+# IDE
+.vscode/
+.idea/
+
+# Operating system
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+
+# Backups / deployment archives
+*.zip
+# Old duplicate project files
+config/config/
+config/manage.py
+templates/core/urls.py

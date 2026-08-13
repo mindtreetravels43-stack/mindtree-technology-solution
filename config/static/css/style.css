@@ -1,0 +1,409 @@
+/* ===============================
+   GLOBAL
+================================= */
+
+body{
+    font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    color:#1f2937;
+    overflow-x:hidden;
+}
+
+section{
+    padding:80px 0;
+}
+
+/* ===============================
+   NAVBAR
+================================= */
+
+.navbar{
+    background:rgba(10,25,47,.95);
+    backdrop-filter:blur(10px);
+    padding:18px 0;
+    transition:.3s;
+}
+
+.navbar-brand{
+    color:#fff !important;
+    font-weight:700;
+    font-size:24px;
+}
+
+.nav-link{
+    color:#fff !important;
+    margin-left:18px;
+    font-weight:500;
+}
+
+.nav-link:hover{
+    color:#f4b400 !important;
+}
+
+.btn-warning{
+    background:#f4b400;
+    border:none;
+    color:#000;
+    font-weight:600;
+    padding:12px 28px;
+    border-radius:50px;
+}
+
+.btn-warning:hover{
+    background:#ffc933;
+}
+
+/* ===============================
+   HERO
+================================= */
+
+.hero{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:180px 0 120px;
+}
+
+.hero h1{
+    font-size:58px;
+    font-weight:700;
+    line-height:1.15;
+}
+
+.hero p{
+    font-size:22px;
+    color:#d1d5db;
+    margin-top:25px;
+    margin-bottom:35px;
+}
+
+.hero img{
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+/* ===============================
+   SERVICES
+================================= */
+
+.service-card{
+    background:#fff;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    height:100%;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+}
+
+/* ===============================
+   FOOTER
+================================= */
+
+footer{
+    background:#111827;
+    color:#d1d5db;
+    padding:60px 0;
+}
+
+footer h4,
+footer h5{
+    color:#fff;
+}
+
+.footer-link{
+    color:#d1d5db;
+    text-decoration:none;
+}
+
+.footer-link:hover{
+    color:#f4b400;
+}
+/* ===============================
+   HOMEPAGE HERO SLIDER
+================================= */
+
+.hero-slider{
+    background:#0f172a;
+    color:#fff;
+}
+
+.hero-slider .carousel-item{
+    min-height:100vh;
+}
+
+.hero-slide{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:170px 0 110px;
+    background:
+        linear-gradient(
+            135deg,
+            #071a33 0%,
+            #0f172a 55%,
+            #123b68 100%
+        );
+}
+
+.hero-slide-alt{
+    background:
+        linear-gradient(
+            135deg,
+            #071426 0%,
+            #102b4e 55%,
+            #174d73 100%
+        );
+}
+
+.hero-slide-agtech{
+    background:
+        linear-gradient(
+            135deg,
+            #071a22 0%,
+            #123a38 55%,
+            #15544d 100%
+        );
+}
+
+.hero-eyebrow{
+    display:inline-block;
+    color:#f4b400;
+    font-size:14px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:18px;
+}
+
+.hero-slide h1{
+    font-size:58px;
+    font-weight:800;
+    line-height:1.08;
+    margin-bottom:25px;
+}
+
+.hero-slide p{
+    font-size:20px;
+    line-height:1.7;
+    color:#dbe4ef;
+    margin-bottom:32px;
+    max-width:680px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.hero-slide-image{
+    width:100%;
+    height:470px;
+    object-fit:cover;
+    border-radius:22px;
+    box-shadow:0 25px 60px rgba(0,0,0,.38);
+}
+
+.hero-slider .carousel-control-prev,
+.hero-slider .carousel-control-next{
+    width:6%;
+}
+
+.hero-slider .carousel-indicators{
+    margin-bottom:28px;
+}
+
+.hero-slider .carousel-indicators button{
+    width:35px;
+    height:4px;
+    border-radius:10px;
+}
+
+@media (max-width:991px){
+
+    .hero-slider .carousel-item{
+        min-height:auto;
+    }
+
+    .hero-slide{
+        min-height:auto;
+        padding:145px 0 90px;
+        text-align:center;
+    }
+
+    .hero-slide h1{
+        font-size:44px;
+    }
+
+    .hero-slide p{
+        font-size:18px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-actions{
+        justify-content:center;
+    }
+
+    .hero-slide-image{
+        height:350px;
+        margin-top:20px;
+    }
+
+    .hero-slider .carousel-control-prev,
+    .hero-slider .carousel-control-next{
+        display:none;
+    }
+}
+
+@media (max-width:576px){
+
+    .hero-slide{
+        padding:125px 0 75px;
+    }
+
+    .hero-slide h1{
+        font-size:36px;
+    }
+
+    .hero-slide p{
+        font-size:17px;
+    }
+
+    .hero-slide-image{
+        height:260px;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+    }
+}
+
+/* ==================================================
+   FINAL NAVBAR + INNER PAGE FIX
+================================================== */
+
+/* Fixed navbar must always remain visible */
+.navbar{
+    background:#0a192f !important;
+    min-height:76px;
+    padding:8px 0 !important;
+    z-index:1050;
+    box-shadow:0 2px 12px rgba(0,0,0,.15);
+}
+
+/* Keep navbar content aligned */
+.navbar .container{
+    display:flex;
+    align-items:center;
+}
+
+/* Control official logo size */
+.navbar-brand{
+    padding:0 !important;
+    margin-right:25px;
+    flex-shrink:0;
+}
+
+.mindtree-logo{
+    display:block;
+    width:auto !important;
+    height:52px !important;
+    max-width:260px !important;
+    object-fit:contain;
+}
+
+/* Make menu visible on every page */
+.navbar .nav-link{
+    color:#ffffff !important;
+    font-size:15px;
+    font-weight:500;
+    margin-left:10px;
+    white-space:nowrap;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus{
+    color:#f4b400 !important;
+}
+
+/* Get Started */
+.navbar .btn-warning{
+    background:#f4b400;
+    color:#000;
+    padding:10px 20px;
+    white-space:nowrap;
+}
+
+/* IMPORTANT:
+   Fixed navbar must not cover normal page content */
+body{
+    padding-top:76px;
+}
+
+/* Slider already provides its own spacing,
+   so don't create a large gap on the homepage */
+.hero-slider{
+    margin-top:-76px;
+}
+
+/* Tablet */
+@media (max-width:1200px) and (min-width:992px){
+
+    .mindtree-logo{
+        height:44px !important;
+        max-width:210px !important;
+    }
+
+    .navbar .nav-link{
+        font-size:14px;
+        margin-left:6px;
+    }
+
+    .navbar .btn-warning{
+        padding:9px 15px;
+        font-size:14px;
+    }
+}
+
+/* Mobile */
+@media (max-width:991px){
+
+    body{
+        padding-top:70px;
+    }
+
+    .hero-slider{
+        margin-top:-70px;
+    }
+
+    .navbar{
+        min-height:70px;
+    }
+
+    .mindtree-logo{
+        height:44px !important;
+        max-width:220px !important;
+    }
+
+    .navbar-collapse{
+        background:#0a192f !important;
+        width:100%;
+        padding:18px;
+        margin-top:10px;
+        border-radius:10px;
+    }
+
+    .navbar .nav-link{
+        color:#ffffff !important;
+        margin-left:0;
+        padding:10px 0;
+    }
+}

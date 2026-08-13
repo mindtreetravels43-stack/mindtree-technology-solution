@@ -1,0 +1,605 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact | MindTree Technology Solution
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================
+     CONTACT HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-9">
+
+                <span class="text-warning fw-bold text-uppercase">
+                    Contact Us
+                </span>
+
+                <h1 class="display-3 fw-bold mt-3">
+                    Let's Build Something
+                    Great Together
+                </h1>
+
+                <p class="lead mt-4">
+                    Whether you are looking to modernise your
+                    infrastructure, adopt cloud technology, explore
+                    artificial intelligence or develop a new digital
+                    solution, we'd like to hear from you.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT AREA
+========================= -->
+
+<section class="py-5">
+
+    <div class="container py-5">
+
+        <div class="row g-5">
+
+
+            <!-- =========================
+                 CONTACT INFORMATION
+            ========================= -->
+
+            <div class="col-lg-5">
+
+                <span class="text-warning fw-bold text-uppercase">
+                    Get In Touch
+                </span>
+
+                <h2 class="section-title mt-2">
+                    Start a Conversation
+                </h2>
+
+                <p class="mt-4">
+                    Tell us about your organisation, your challenge
+                    or the technology opportunity you would like
+                    to explore. Our team will be happy to discuss
+                    your requirements.
+                </p>
+
+
+                <!-- EMAIL -->
+
+                <div class="d-flex mb-4 mt-4">
+
+                    <div class="me-3">
+
+                        <i class="bi bi-envelope-fill fs-3 text-warning"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h5>Email</h5>
+
+                        <p class="mb-1">
+
+                            <a href="mailto:info@mindtreetech.com"
+                               class="text-decoration-none">
+
+                                info@mindtreetech.com
+
+                            </a>
+
+                        </p>
+
+                        <p class="mb-0">
+
+                            <a href="mailto:mindtreetechnologysolution@gmail.com"
+                               class="text-decoration-none">
+
+                                mindtreetechnologysolution@gmail.com
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE / WHATSAPP -->
+
+                <div class="d-flex mb-4">
+
+                    <div class="me-3">
+
+                        <i class="bi bi-whatsapp fs-3 text-warning"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h5>Phone & WhatsApp</h5>
+
+                        <p class="mb-0">
+
+                            <a href="https://wa.me/2348164078636"
+                               target="_blank"
+                               class="text-decoration-none">
+
+                                +234 816 407 8636
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- UK OFFICE -->
+
+                <div class="d-flex mb-4">
+
+                    <div class="me-3">
+
+                        <i class="bi bi-geo-alt-fill fs-3 text-warning"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h5>UK Office</h5>
+
+                        <p class="mb-0">
+
+                            Jackson Street<br>
+                            Derby<br>
+                            DE22 3RZ<br>
+                            United Kingdom
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NIGERIA OFFICE -->
+
+                <div class="d-flex mb-4">
+
+                    <div class="me-3">
+
+                        <i class="bi bi-geo-alt-fill fs-3 text-warning"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h5>Nigeria Office</h5>
+
+                        <p class="mb-0">
+
+                            Aiyee Road<br>
+                            Imokun, Epe<br>
+                            Lagos State<br>
+                            Nigeria
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 CONTACT FORM
+            ========================= -->
+
+            <div class="col-lg-7">
+
+                <div class="p-4 p-lg-5 shadow rounded bg-light">
+
+                    <h3 class="mb-2">
+                        Send Us a Message
+                    </h3>
+
+                    <p class="text-muted mb-4">
+                        Complete the form and choose how you would
+                        like to send your enquiry.
+                    </p>
+
+
+                    <form id="contactForm">
+
+                        <div class="row g-3">
+
+
+                            <!-- NAME -->
+
+                            <div class="col-md-6">
+
+                                <label for="name"
+                                       class="form-label fw-semibold">
+
+                                    Full Name
+
+                                </label>
+
+                                <input type="text"
+                                       id="name"
+                                       name="name"
+                                       class="form-control"
+                                       placeholder="Your full name"
+                                       required>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div class="col-md-6">
+
+                                <label for="email"
+                                       class="form-label fw-semibold">
+
+                                    Email Address
+
+                                </label>
+
+                                <input type="email"
+                                       id="email"
+                                       name="email"
+                                       class="form-control"
+                                       placeholder="you@example.com"
+                                       required>
+
+                            </div>
+
+
+                            <!-- COMPANY -->
+
+                            <div class="col-md-6">
+
+                                <label for="company"
+                                       class="form-label fw-semibold">
+
+                                    Company
+
+                                </label>
+
+                                <input type="text"
+                                       id="company"
+                                       name="company"
+                                       class="form-control"
+                                       placeholder="Company name">
+
+                            </div>
+
+
+                            <!-- PHONE -->
+
+                            <div class="col-md-6">
+
+                                <label for="phone"
+                                       class="form-label fw-semibold">
+
+                                    Phone Number
+
+                                </label>
+
+                                <input type="tel"
+                                       id="phone"
+                                       name="phone"
+                                       class="form-control"
+                                       placeholder="Phone number">
+
+                            </div>
+
+
+                            <!-- SUBJECT -->
+
+                            <div class="col-12">
+
+                                <label for="subject"
+                                       class="form-label fw-semibold">
+
+                                    Subject
+
+                                </label>
+
+                                <input type="text"
+                                       id="subject"
+                                       name="subject"
+                                       class="form-control"
+                                       placeholder="What can we help you with?"
+                                       required>
+
+                            </div>
+
+
+                            <!-- MESSAGE -->
+
+                            <div class="col-12">
+
+                                <label for="message"
+                                       class="form-label fw-semibold">
+
+                                    Message
+
+                                </label>
+
+                                <textarea id="message"
+                                          name="message"
+                                          class="form-control"
+                                          rows="6"
+                                          placeholder="Tell us about your requirements..."
+                                          required></textarea>
+
+                            </div>
+
+
+                            <!-- BUTTONS -->
+
+                            <div class="col-12 mt-4">
+
+                                <button type="button"
+                                        onclick="sendWhatsApp()"
+                                        class="btn btn-warning btn-lg me-2 mb-2">
+
+                                    <i class="bi bi-whatsapp"></i>
+
+                                    Send via WhatsApp
+
+                                </button>
+
+
+                                <button type="button"
+                                        onclick="sendEmail()"
+                                        class="btn btn-dark btn-lg mb-2">
+
+                                    <i class="bi bi-envelope"></i>
+
+                                    Send via Email
+
+                                </button>
+
+                            </div>
+
+
+                            <!-- INFORMATION -->
+
+                            <div class="col-12">
+
+                                <small class="text-muted">
+
+                                    Your enquiry can be sent directly
+                                    to our WhatsApp number or email.
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta-section py-5">
+
+    <div class="container py-5 text-center">
+
+        <span class="text-warning fw-bold text-uppercase">
+
+            MindTree Technology Solution
+
+        </span>
+
+        <h2 class="mt-2">
+
+            Technology That Moves
+            Business Forward
+
+        </h2>
+
+        <p class="mt-3">
+
+            Cloud. AI. Cybersecurity.
+            Software. Infrastructure.
+            Innovation.
+
+        </p>
+
+        <a href="https://wa.me/2348164078636"
+           target="_blank"
+           class="btn btn-warning btn-lg mt-3">
+
+            <i class="bi bi-whatsapp"></i>
+
+            Chat With Us
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT FORM JAVASCRIPT
+========================= -->
+
+<script>
+
+function getFormData() {
+
+    return {
+
+        name: document.getElementById("name").value.trim(),
+
+        email: document.getElementById("email").value.trim(),
+
+        company: document.getElementById("company").value.trim(),
+
+        phone: document.getElementById("phone").value.trim(),
+
+        subject: document.getElementById("subject").value.trim(),
+
+        message: document.getElementById("message").value.trim()
+
+    };
+
+}
+
+
+
+function validateForm(data) {
+
+    if (!data.name ||
+        !data.email ||
+        !data.subject ||
+        !data.message) {
+
+        alert(
+            "Please complete your name, email, subject and message."
+        );
+
+        return false;
+
+    }
+
+    return true;
+
+}
+
+
+
+function sendWhatsApp() {
+
+    const data = getFormData();
+
+    if (!validateForm(data)) {
+        return;
+    }
+
+
+    const whatsappText =
+
+        "NEW WEBSITE ENQUIRY - MINDTREE TECHNOLOGY SOLUTION\n\n" +
+
+        "Name: " + data.name + "\n" +
+
+        "Email: " + data.email + "\n" +
+
+        "Company: " + (data.company || "Not provided") + "\n" +
+
+        "Phone: " + (data.phone || "Not provided") + "\n" +
+
+        "Subject: " + data.subject + "\n\n" +
+
+        "Message:\n" +
+
+        data.message;
+
+
+    const whatsappURL =
+
+        "https://wa.me/2348164078636?text=" +
+
+        encodeURIComponent(whatsappText);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+
+
+function sendEmail() {
+
+    const data = getFormData();
+
+    if (!validateForm(data)) {
+        return;
+    }
+
+
+    const emailSubject =
+
+        "Website Enquiry - " +
+        data.subject;
+
+
+    const emailBody =
+
+        "NEW WEBSITE ENQUIRY - MINDTREE TECHNOLOGY SOLUTION\n\n" +
+
+        "Name: " + data.name + "\n" +
+
+        "Email: " + data.email + "\n" +
+
+        "Company: " + (data.company || "Not provided") + "\n" +
+
+        "Phone: " + (data.phone || "Not provided") + "\n" +
+
+        "Subject: " + data.subject + "\n\n" +
+
+        "Message:\n" +
+
+        data.message;
+
+
+    const mailtoURL =
+
+        "mailto:info@mindtreetech.com" +
+
+        "?subject=" +
+
+        encodeURIComponent(emailSubject) +
+
+        "&body=" +
+
+        encodeURIComponent(emailBody);
+
+
+    window.location.href = mailtoURL;
+
+}
+
+</script>
+
+{% endblock %}
