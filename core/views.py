@@ -1,8 +1,19 @@
 from django.shortcuts import render
+from .models import HomepageSlide
 
 
 def home(request):
-    return render(request, "core/home.html")
+    slides = HomepageSlide.objects.filter(
+        is_active=True
+    ).order_by("display_order", "title")
+
+    return render(
+        request,
+        "core/home.html",
+        {
+            "slides": slides,
+        }
+    )
 
 
 def about(request):

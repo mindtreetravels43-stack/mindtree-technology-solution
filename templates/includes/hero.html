@@ -7,35 +7,24 @@
          data-bs-ride="carousel"
          data-bs-interval="6000">
 
+        {% if slides %}
+
         <div class="carousel-indicators">
-
+            {% for slide in slides %}
             <button type="button"
                     data-bs-target="#mindtreeHeroCarousel"
-                    data-bs-slide-to="0"
-                    class="active"
-                    aria-current="true"
-                    aria-label="Slide 1">
+                    data-bs-slide-to="{{ forloop.counter0 }}"
+                    {% if forloop.first %}class="active" aria-current="true"{% endif %}
+                    aria-label="Slide {{ forloop.counter }}">
             </button>
-
-            <button type="button"
-                    data-bs-target="#mindtreeHeroCarousel"
-                    data-bs-slide-to="1"
-                    aria-label="Slide 2">
-            </button>
-
-            <button type="button"
-                    data-bs-target="#mindtreeHeroCarousel"
-                    data-bs-slide-to="2"
-                    aria-label="Slide 3">
-            </button>
-
+            {% endfor %}
         </div>
-
 
         <div class="carousel-inner">
 
-            <!-- SLIDE 1 -->
-            <div class="carousel-item active">
+            {% for slide in slides %}
+
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
 
                 <div class="hero-slide">
 
@@ -45,44 +34,85 @@
 
                             <div class="col-lg-6">
 
+                                {% if slide.subtitle %}
                                 <span class="hero-eyebrow">
-                                    Digital Transformation
+                                    {{ slide.subtitle }}
                                 </span>
+                                {% endif %}
 
                                 <h1>
-                                    Driving Digital Transformation
-                                    Through Innovation
+                                    {{ slide.title }}
                                 </h1>
 
+                                {% if slide.description %}
                                 <p>
-                                    MindTree Technology Solution helps organisations
-                                    modernise infrastructure, strengthen operations
-                                    and embrace cloud technologies that support
-                                    sustainable growth.
+                                    {{ slide.description }}
                                 </p>
+                                {% endif %}
 
                                 <div class="hero-actions">
 
-                                    <a href="{% url 'services' %}"
+                                    {% if slide.button_text and slide.button_url %}
+                                    <a href="{{ slide.button_url }}"
                                        class="btn btn-warning btn-lg">
-                                        Explore Our Services
+                                        {{ slide.button_text }}
                                     </a>
+                                    {% endif %}
 
-                                    <a href="{% url 'contact' %}"
+                                    {% if slide.secondary_button_text and slide.secondary_button_url %}
+                                    <a href="{{ slide.secondary_button_url }}"
                                        class="btn btn-outline-light btn-lg">
-                                        Talk to Us
+                                        {{ slide.secondary_button_text }}
                                     </a>
+                                    {% endif %}
 
                                 </div>
 
                             </div>
 
-
                             <div class="col-lg-6">
 
-                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200"
-                                     class="hero-slide-image"
-                                     alt="Digital transformation technology">
+                                {% if slide.media_type == "image" and slide.image %}
+
+                                    <img src="{{ slide.image.url }}"
+                                         class="hero-slide-image"
+                                         alt="{{ slide.title }}">
+
+                                {% elif slide.media_type == "video" and slide.video %}
+
+                                    <video class="hero-slide-image"
+                                           {% if slide.autoplay %}autoplay{% endif %}
+                                           {% if slide.muted %}muted{% endif %}
+                                           {% if slide.loop_video %}loop{% endif %}
+                                           playsinline
+                                           controls
+                                           {% if slide.poster_image %}poster="{{ slide.poster_image.url }}"{% endif %}>
+
+                                        <source src="{{ slide.video.url }}">
+
+                                        Your browser does not support the video tag.
+
+                                    </video>
+
+                                {% elif slide.media_type == "youtube" and slide.youtube_url %}
+
+                                    <div class="ratio ratio-16x9">
+
+                                        <iframe src="{{ slide.youtube_url }}"
+                                                title="{{ slide.title }}"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen>
+                                        </iframe>
+
+                                    </div>
+
+                                {% elif slide.poster_image %}
+
+                                    <img src="{{ slide.poster_image.url }}"
+                                         class="hero-slide-image"
+                                         alt="{{ slide.title }}">
+
+                                {% endif %}
 
                             </div>
 
@@ -94,132 +124,12 @@
 
             </div>
 
-
-            <!-- SLIDE 2 -->
-            <div class="carousel-item">
-
-                <div class="hero-slide hero-slide-alt">
-
-                    <div class="container">
-
-                        <div class="row align-items-center g-5">
-
-                            <div class="col-lg-6">
-
-                                <span class="hero-eyebrow">
-                                    Cloud • AI • Cybersecurity
-                                </span>
-
-                                <h1>
-                                    Secure. Intelligent.
-                                    Scalable.
-                                </h1>
-
-                                <p>
-                                    We combine cloud infrastructure, artificial
-                                    intelligence and cybersecurity expertise to
-                                    help organisations build secure and resilient
-                                    technology environments.
-                                </p>
-
-                                <div class="hero-actions">
-
-                                    <a href="{% url 'solutions' %}"
-                                       class="btn btn-warning btn-lg">
-                                        View Solutions
-                                    </a>
-
-                                    <a href="{% url 'contact' %}"
-                                       class="btn btn-outline-light btn-lg">
-                                        Get Started
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="col-lg-6">
-
-                                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200"
-                                     class="hero-slide-image"
-                                     alt="Cloud artificial intelligence and cybersecurity">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- SLIDE 3 -->
-            <div class="carousel-item">
-
-                <div class="hero-slide hero-slide-agtech">
-
-                    <div class="container">
-
-                        <div class="row align-items-center g-5">
-
-                            <div class="col-lg-6">
-
-                                <span class="hero-eyebrow">
-                                    Smart Agriculture & AgTech
-                                </span>
-
-                                <h1>
-                                    Engineering the Future
-                                    of Agriculture
-                                </h1>
-
-                                <p>
-                                    We explore robotics, automation, intelligent
-                                    systems and data-driven technologies that can
-                                    support more productive and sustainable
-                                    agricultural operations.
-                                </p>
-
-                                <div class="hero-actions">
-
-                                    <a href="{% url 'innovation' %}"
-                                       class="btn btn-warning btn-lg">
-                                        Explore Innovation
-                                    </a>
-
-                                    <a href="{% url 'projects' %}"
-                                       class="btn btn-outline-light btn-lg">
-                                        View Projects
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="col-lg-6">
-
-                                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200"
-                                     class="hero-slide-image"
-                                     alt="Smart agriculture and agricultural technology">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
+            {% endfor %}
 
         </div>
 
+        {% if slides|length > 1 %}
 
-        <!-- PREVIOUS -->
         <button class="carousel-control-prev"
                 type="button"
                 data-bs-target="#mindtreeHeroCarousel"
@@ -234,8 +144,6 @@
 
         </button>
 
-
-        <!-- NEXT -->
         <button class="carousel-control-next"
                 type="button"
                 data-bs-target="#mindtreeHeroCarousel"
@@ -249,6 +157,47 @@
             </span>
 
         </button>
+
+        {% endif %}
+
+        {% else %}
+
+        <div class="hero-slide">
+
+            <div class="container">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-7">
+
+                        <span class="hero-eyebrow">
+                            MindTree Technology Solution
+                        </span>
+
+                        <h1>
+                            Driving Digital Transformation Through Innovation
+                        </h1>
+
+                        <p>
+                            Cloud, Artificial Intelligence, Cybersecurity,
+                            Enterprise Software, Automation, Data Analytics
+                            and Smart Agriculture.
+                        </p>
+
+                        <a href="{% url 'services' %}"
+                           class="btn btn-warning btn-lg">
+                            Explore Our Services
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
 
     </div>
 

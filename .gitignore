@@ -34,3 +34,14 @@ Thumbs.db
 config/config/
 config/manage.py
 templates/core/urls.py
+
+# MindTree CMS - local files not for GitHub
+media/
+
+# Temporary development / backup files
+*_before_*.py
+*_before_*.html
+create_mindtree_slides.py
+
+# Separate Eredo LCDA project
+eredo-lcda/
